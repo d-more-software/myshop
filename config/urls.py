@@ -26,8 +26,7 @@ urlpatterns = [
     path('commande/<int:product_id>/', commande, name='commande'),
     path('commande-confirmation/<int:commande_id>/', commande_confirmation, name='commande_confirmation'),
     path('commande-confirmation-pdf/<int:commande_id>/', generate_pdf, name='generate_pdf'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
